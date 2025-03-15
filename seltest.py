@@ -26,10 +26,8 @@ nltk.download('vader_lexicon')
 sia = SentimentIntensityAnalyzer()
 
 #Typical positive/negative stock terms
-positive_words = 'buy bull long support undervalued underpriced cheap upward rising 
-                trend moon rocket hold breakout call beat support buying holding high profit'
-negative_words = 'sell bear bubble bearish short overvalued overbought overpriced expensive 
-                downward falling sold sell low put miss resistance squeeze cover seller'
+positive_words = 'buy bull long support undervalued underpriced cheap upward rising trend moon rocket hold breakout call beat support buying holding high profit'
+negative_words = 'sell bear bubble bearish short overvalued overbought overpriced expensive downward falling sold sell low put miss resistance squeeze cover seller'
 
 dictOfpos = {i: 4 for i in positive_words.split(" ")}
 dictOfneg = {i: -4 for i in negative_words.split(" ")}
@@ -37,7 +35,7 @@ Financial_Lexicon = {**dictOfpos, **dictOfneg}
 
 sia.lexicon.update(Financial_Lexicon)
 
-def get_tweets(stock_ticker, num_tweets=20):
+def get_tweets(stock_ticker, num_tweets=100):
     options = Options()
     options.add_argument("--headless")  
     options.add_argument("--disable-gpu")
