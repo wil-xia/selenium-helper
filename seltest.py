@@ -1,5 +1,6 @@
 #
-# THIS CODE WAS WRITTEN IN 2023 AND IS LIKELY DEPRECATED
+# THIS CODE WAS WRITTEN IN 2023 AND IS DEPRECATED
+# THE PREVIOUS WORKING VERSION OF CHROMIUM DRIVER NO LONGER WORKS AS CHROME AS UPDATED
 #
 
 
@@ -40,7 +41,7 @@ def get_tweets(stock_ticker, num_tweets=100):
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
 
-    service = Service('/path/to/chromedriver') 
+    service = Service('/Users/Will/Downloads/chromedriver_win32') 
     driver = webdriver.Chrome(service=service, options=options)
 
     try:
